@@ -18,14 +18,15 @@ X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_
 
 *Define neural network*
 
-'class CircleModelV0(nn.Module):
+```
+class CircleModelV0(nn.Module):
     def __init__(self):
         super().__init__()
         self.layer_1 = nn.Linear(in_features=2, out_features=5)
         self.layer_2 = nn.Linear(in_features=5, out_features=1)
     def forward(self, x):
         return self.layer_2(self.layer_1(x))'
-
+```
 - The model uses two linear layers:
     layer_1: Upscales 2 input features to 5 features.
     layer_2: Reduces 5 features to 1 output.
